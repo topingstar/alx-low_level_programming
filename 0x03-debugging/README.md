@@ -1,0 +1,1 @@
+Debugging is the process of locating and correcting software flaws that prevent it from functioning properly. You'll learn how to use debugging tools like gdb or built-in tools in IDEs as you progress as a programmer and an industry engineer. However, it is critical to comprehend the ideas and procedures of manual debugging.
