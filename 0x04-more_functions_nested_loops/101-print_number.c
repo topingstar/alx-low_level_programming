@@ -1,36 +1,21 @@
 #include "holberton.h"
 
 /**
- * print_number - prints # using _putchar function
- * @n: the integer to print
+ * main - check the code for ALX School students.
  *
- * Return: void
+ * Return: Always 0.
  */
-void print_number(int n)
+int main(void)
 {
-int copy, nth, size = 1, ones = n % 10;
-
-n /= 10;
-copy = n;
-if (ones < 0)
-{
-ones *= -1, copy *= -1, n *= -1;
-_putchar('-');
+print_number(98);
+_putchar('\n');
+print_number(402);
+_putchar('\n');
+print_number(1024);
+_putchar('\n');
+print_number(0);
+_putchar('\n');
+print_number(-98);
+_putchar('\n');
+return (0);
 }
-if (copy > 0)
-{
-while (copy / 10 != 0)
-{
-copy /= 10, size *= 10;
-}
-while (size > 0)
-{
-nth = n / size;
-_putchar('0' + nth);
-n -= nth *size;
-size /= 10;
-}
-}
-_putchar('0' + ones);
-}
-
