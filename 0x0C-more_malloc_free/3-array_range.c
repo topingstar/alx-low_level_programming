@@ -1,4 +1,4 @@
-#include <stdlib.>
+#include <stdlib.h>
 #include "holberton.h"
 /**
  * array_range - creates an array of integers from min to max.
@@ -21,7 +21,4 @@ for (i = 0; i < size && min <= max; i++, min++)
 *(p + i) = min;
 return (p);
 }
-
-
-
 
