@@ -24,3 +24,4 @@ sum += va_arg(numbers, int);
 va_end(numbers);
 return (sum);
 }
+
