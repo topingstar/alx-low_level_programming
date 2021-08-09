@@ -1,5 +1,5 @@
-#ifndef MAIN_H
-#define MAIN_H
+#ifndef _HOLBERTON_H
+#define _HOLBERTON_H
 
 #include <sys/types.h>
 #include <sys/stat.h>
@@ -8,7 +8,6 @@
 #include <unistd.h>
 #include <errno.h>
 #include <stdlib.h>
-#include "holberton.h"
 
 int _putchar(char c);
 
