@@ -1,22 +1,41 @@
 #include "search_algos.h"
 
 /**
- * jump_list - searches for a value in a sorted list of integers
- * using the Jump search algorithm.
- * @list: pointer to the head of the list to search in.
- * @size: number of nodes in the list.
- * @value: value to search for.
- * Return: pointer to the first node where value is located.
- * resturns NULL if value is not present in the list or if head is NULL.
- **/
-listint_t *jump_list(listint_t *list, size_t size, int value)
+ * linear_skip - Searches using linear skip.
+ * @list: A pointer to the  head of the linked list to search.
+ * @value: The value to search for.
+ *
+ * Return: NULL, a pointer to the first node where the value is located.
+ */
+skiplist_t *linear_skip(skiplist_t *list, int value)
 {
+	skiplist_t *node, *jump;
+
 	if (!list)
-		return (list);
+		return (NULL);
 
-	/* It's not what you expected, I still have to do this task */
-	size = size;
-	value = value;
+	for (node = jump = list; jump->next && jump->n < value;)
+	{
+		node = jump;
+		if (jump->express)
+		{
+			jump = jump->express;
+			printf("Value checked at index [%ld] = [%d]\n",
+					jump->index, jump->n);
+		}
+		else
+		{
+			while (jump->next)
+				jump = jump->next;
+		}
+	}
 
-	return (list);
+	printf("Value found between indexes [%ld] and [%ld]\n",
+			node->index, jump->index);
+
+	for (; node->index < jump->index && node->n < value; node = node->next)
+		printf("Value checked at index [%ld] = [%d]\n", node->index, node->n);
+	printf("Value checked at index [%ld] = [%d]\n", node->index, node->n);
+
+	return (node->n == value ? node : NULL);
 }
